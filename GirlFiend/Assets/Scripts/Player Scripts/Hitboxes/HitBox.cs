@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 //using XInputDotNetPure;
 #pragma warning disable 0649
+[RequireComponent(typeof(BoxCollider))]
 public class HitBox : MonoBehaviour
 {
     private Player player;
@@ -37,13 +38,13 @@ public class HitBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         //if (!enemies.Contains(other.gameObject)) {
+        if(effects!=null)
             Instantiate(effects, other.gameObject.transform);
 
             if (other != null && other.GetComponent<EnemyBody>() && !enemies.Contains(other.gameObject)) {
                 if (enemies.Contains(other.gameObject)) {
 
                 }
-            print("Gnat");
                 if (onEnemyHit != null) {
                     onEnemyHit();
                 }
@@ -57,17 +58,10 @@ public class HitBox : MonoBehaviour
             }
         //}
 
-        if (other.gameObject.CompareTag("SlimeTree")) {
-            //Instantiate(fire, other.gameObject.transform.position, Quaternion.identity);
-            Destroy(other.gameObject, 2);
-        }
-        if (other.gameObject.CompareTag("Dummy")) {
 
-            //Instantiate(effects, other.gameObject.transform);
-            //other.GetComponent<Dummy>().Hit = true;
-        }
         else {
-            Instantiate(effects, other.gameObject.transform);
+            if(effects!=null)
+                Instantiate(effects, other.gameObject.transform);
         }
         if (fireball) {
             Destroy(gameObject);

@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         else {
             instance = this;
         }
-        CurrentState = GameState.Paused;
+        //CurrentState = GameState.Paused;
     }
     void Start() {
         //PlayerInputs.pause += PauseGame;

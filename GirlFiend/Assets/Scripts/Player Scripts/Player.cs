@@ -8,8 +8,10 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject bodyObject;
 
     private bool lockedOn;
+    private bool moving;
+    private int combatAnimations;
     #region outside scripts
-
+    private CharacterController charCon;
     private Animator anim;
     internal Stats stats;
     #endregion
@@ -22,10 +24,15 @@ public class Player : MonoBehaviour
     #region
     public Animator Anim { get => anim; set => anim = value; }
     public bool LockedOn { get => lockedOn; set => lockedOn = value; }
+    public CharacterController CharCon { get => charCon; set => charCon = value; }
+    public int CombatAnimations { get => combatAnimations; set => combatAnimations = value; }
+
+    //public bool Moving { get => moving; set { moving = value;anim.SetBool("Moving",moving); } }
     #endregion
     public static Player GetPlayer() => instance;
     private void Awake() {
         Anim = bodyObject.GetComponent<Animator>();
+        charCon = GetComponent<CharacterController>();
     }
     // Start is called before the first frame update
     void Start()
