@@ -21,6 +21,7 @@ public class DarkSwordRelic : EquipmentObj
     }
 
     public override void DownSquare() {
+        print("UP");
         Player.GetPlayer().Anim.Play("SwordUppercut");
     }
 

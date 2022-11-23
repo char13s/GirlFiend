@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     #region anim paramters
     private bool moving;
     bool isFalling;
-    protected bool grounded;
+    private bool grounded;
     //protected bool lockedOn;
     //public bool Grounded { get => grounded; set { grounded = value; Anim.SetBool("Grounded", grounded); } }
     public bool Moving { get => moving; set { moving = value;Anim.SetBool("Moving", moving);  } }//  } }
@@ -50,8 +50,10 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 Displacement { get => displacement; set => displacement = value; }
     public float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public CharacterController CharCon { get => charCon; set => charCon = value; }
-    public bool IsJumpPressed { get => isJumpPressed; set => isJumpPressed = value; }
+    public bool IsJumpPressed { get => isJumpPressed; set { isJumpPressed = value; Debug.Log(isJumpPressed); } }
     public bool IsFalling { get => isFalling; set { isFalling = value; } }
+
+    protected bool Grounded { get => grounded; set { grounded = value; } }
     #endregion
     private void Start() {
         player = GetComponent<Player>();
@@ -60,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
         SetUpJump();
         MovingState.returnSpeed += Move;
         mainCam = GameManager.GetManager().Camera;
-        Displacement = new Vector3(-1,0,0);
+        Displacement = new Vector3(1,0,0);
         StartCoroutine(WaitToSTop());
         rotationSpeed = 300;
         //PlayerAnimationEvents.setjump += Jumping;
@@ -69,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator WaitToSTop() {
         yield return null;
         Displacement = Vector3.zero;
-        rotationSpeed = 15;
+        rotationSpeed = 100;
     }
     private void FixedUpdate() {
         //if (!player.InTeleport)
@@ -114,10 +116,10 @@ public class PlayerMovement : MonoBehaviour
             direction.y = 0;
             //Vector3 rot = Vector3.Normalize(Direction);
             //rot.y = 0;
-            qTo = Quaternion.LookRotation(-direction);
+            qTo = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, qTo, Time.deltaTime * rotationSpeed);
             //Vector3 vector = Direction.normalized;
-            speed.x = moveSpeed * -displacement.x;
+            speed.x = moveSpeed * displacement.x;
             //speed.z = moveSpeed * vector.z;
 
         }
@@ -132,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
     void HandleJump() {
         //charCon.Move(speed * Time.deltaTime);
         if (!isJumping && charCon.isGrounded && isJumpPressed) {
+            Debug.Log("jumped");
             isJumping = true;
             speed.y = intialJumpVelocity * .5f;
             anim.SetTrigger("Jump");
