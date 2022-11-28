@@ -6,7 +6,7 @@ public class MasterSwordRelic : EquipmentObj
 {
     public static UnityEvent<bool> masterUp;
     public override void Circle() {
-
+        //shield shit
     }
 
     public override void CircleReleased() {
@@ -26,7 +26,7 @@ public class MasterSwordRelic : EquipmentObj
     }
 
     public override void Triangle() {
-
+        //special
     }
 
     public override void UpCircle() {

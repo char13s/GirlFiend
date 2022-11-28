@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BreathingMask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: AzaBody
+    m_Weight: 0
+  - m_Path: AzaBody/AzaCropTop
+    m_Weight: 0
+  - m_Path: AzaBody/AzaShorts
+    m_Weight: 0
+  - m_Path: skeleton
+    m_Weight: 0
+  - m_Path: skeleton/Hip
+    m_Weight: 0
+  - m_Path: skeleton/Hip/LLeg1
+    m_Weight: 0
+  - m_Path: skeleton/Hip/LLeg1/LLegDontMoveThis
+    m_Weight: 0
+  - m_Path: skeleton/Hip/LLeg1/LLegDontMoveThis/LKnee
+    m_Weight: 0
+  - m_Path: skeleton/Hip/LLeg1/LLegDontMoveThis/LKnee/joint7
+    m_Weight: 0
+  - m_Path: skeleton/Hip/LLeg1/LLegDontMoveThis/LKnee/joint7/LFoot
+    m_Weight: 0
+  - m_Path: skeleton/Hip/LLeg1/LLegDontMoveThis/LKnee/joint7/LFoot/LToes
+    m_Weight: 0
+  - m_Path: skeleton/Hip/RLeg1
+    m_Weight: 0
+  - m_Path: skeleton/Hip/RLeg1/RLegDontMoveThis
+    m_Weight: 0
+  - m_Path: skeleton/Hip/RLeg1/RLegDontMoveThis/RKnee
+    m_Weight: 0
+  - m_Path: skeleton/Hip/RLeg1/RLegDontMoveThis/RKnee/joint8
+    m_Weight: 0
+  - m_Path: skeleton/Hip/RLeg1/RLegDontMoveThis/RKnee/joint8/RFoot
+    m_Weight: 0
+  - m_Path: skeleton/Hip/RLeg1/RLegDontMoveThis/RKnee/joint8/RFoot/RToes
+    m_Weight: 0
+  - m_Path: skeleton/Spine
+    m_Weight: 1
+  - m_Path: skeleton/Spine/UpperBody
+    m_Weight: 1
+  - m_Path: skeleton/Spine/UpperBody/Head
+    m_Weight: 1
+  - m_Path: skeleton/Spine/UpperBody/Head/AzaHair
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/Head/AzaHat
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/Head/polySurface19
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow/joint6
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow/joint6/LWrist
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow/joint6/LWrist/LFingers
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow/joint6/LWrist/LFingers/joint4
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow/joint6/LWrist/LThumb
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/LShoulder/ArmL/joint10/LElbow/joint6/LWrist/LThumb/joint3
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/RFingers
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/RFingers/joint2
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/RThumb
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/RThumb/joint1
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/Sword
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/Sword/WoodSword:pCube1
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/Sword/WoodSword:pCube2
+    m_Weight: 0
+  - m_Path: skeleton/Spine/UpperBody/RShoulder/ArmR/joint9/RElbow/joint5/RWrist/Sword/WoodSword:pCube3
+    m_Weight: 0

@@ -143,10 +143,10 @@ public class PlayerCommands : MonoBehaviour
             if (sendInput != null) {
                 sendInput("X");
             }
-            AddInput(Inputs.X);
+            playerMove.IsJumpPressed = true;
         }
         else {
-            AddInput(Inputs.XOut);
+            playerMove.IsJumpPressed = false;
         }
         InputProcess();
         StartCoroutine(EmptyChain());

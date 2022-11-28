@@ -69,10 +69,14 @@ public class PlayerInputs : MonoBehaviour
     }
 
     private void OnJump(InputValue value) {
-
+        print("Jump");
     }
     private void OnAbility(InputValue value) {
 
+    }
+    private void OnLook(InputValue value) {
+        //print("Looking");
+        RotationLook = value.Get<Vector2>();
     }
     private void OnLockOn(InputValue value) {
         if (value.isPressed) {
@@ -85,10 +89,7 @@ public class PlayerInputs : MonoBehaviour
 
     #region transformations
     #endregion
-    private void OnLook(InputValue value) {
-        //print("Looking");
-        RotationLook = value.Get<Vector2>();
-    }
+
     #endregion
 
     #region Dialogue Controls
