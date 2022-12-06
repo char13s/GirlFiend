@@ -86,7 +86,9 @@ public class PlayerInputs : MonoBehaviour
             player.TargetingLogic(false);
         }
     }
-
+    private void OnRoll() {
+        player.Anim.SetTrigger("Roll");
+    }
     #region transformations
     #endregion
 
@@ -122,7 +124,7 @@ public class PlayerInputs : MonoBehaviour
     private void SwitchMaps(int val) {
         switch (val) {
             case 0:
-                map.SwitchCurrentActionMap("Default Controls");
+                map.SwitchCurrentActionMap("DefaultControls");
                 //print("Switched to default controls");
                 break;
             case 1:
@@ -130,14 +132,7 @@ public class PlayerInputs : MonoBehaviour
                 //print("Switched to pause controls");
                 break;
             case 2:
-                map.SwitchCurrentActionMap("Fall Controls");
-                Debug.Log("Falling");
-                break;
-            case 3:
-                map.SwitchCurrentActionMap("Timeline Controls");
-                break;
-            case 4:
-                map.SwitchCurrentActionMap("Dialogue Controls");
+                map.SwitchCurrentActionMap("DialogueControls");
                 break;
             case 99:
                 map.SwitchCurrentActionMap("EmptyControls");

@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class EnemyStatController: MonoBehaviour
+public class EnemyStatController:MonoBehaviour
 {
     private int health;
     private int attack;

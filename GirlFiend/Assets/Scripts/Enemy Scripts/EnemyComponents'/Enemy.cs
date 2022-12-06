@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
 {
 
     private EnemyAiStates state;
-    public enum EnemyType { soft, hard, absorbent }
+    public enum EnemyType { Light,Dark }
     [SerializeField] private EnemyType type;
 
     public enum EnemyAiStates { Null, Idle, Attacking, Chasing, ReturnToSpawn, Dead, Hit, UniqueState, UniqueState2, UniqueState3, UniqueState4, StatusEffect };
@@ -46,10 +46,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Slider EnemyHp;
     [SerializeField] private float speed;
     [SerializeField] private GameObject model;
-    [SerializeField] private GameObject finisherTrigger;
+    //[SerializeField] private GameObject finisherTrigger;
     [SerializeField] private int orbWorth;
     #region Script References
-    private EnemyStatController stats;
+    EnemyStatController stats;
     private Player pc;
     private Animator anim;
     //private AudioSource sound;
@@ -163,6 +163,8 @@ public class Enemy : MonoBehaviour
         //Rbody = GetComponent<Rigidbody>();
         //StatusEffects.onStatusUpdate += StatusControl;
         CharCon = GetComponent<CharacterController>();
+        
+        stats = GetComponent<EnemyStatController>();
         StatCalculation();
         state = EnemyAiStates.Idle;
         
@@ -286,7 +288,7 @@ public class Enemy : MonoBehaviour
         }*/
         if (HealthLeft < Health / 4) {
             lowHealth = true;
-            finisherTrigger.SetActive(true);
+            //finisherTrigger.SetActive(true);
         }
         if (state == EnemyAiStates.Chasing) {
             SwitchToAttack();
@@ -544,33 +546,25 @@ public class Enemy : MonoBehaviour
      //(Mathf.Pow(stats.Attack - 2.6f * pc.stats.Defense, 1.4f) / 30 + 3))) / n; }
 private float DmgMod(float dmg, HitBoxType dmgType) {
         switch (type) {
-            case EnemyType.absorbent:
+            case EnemyType.Light:
                 switch (dmgType) {
-                    case HitBoxType.Heavy:
-                        return dmg;
-                    case HitBoxType.Magic:
+                    case HitBoxType.Dark:
+                        return dmg* 1.5f;
+                    case HitBoxType.Light:
                         return dmg / 4;
                     default:
-                        return dmg * 1.5f;
-                }
-            case EnemyType.soft:
-                switch (dmgType) {
-                    case HitBoxType.Heavy:
-                        return dmg / 4;
-                    case HitBoxType.Magic:
                         return dmg;
-                    default:
-                        return dmg * 1.5f;
                 }
-            case EnemyType.hard:
+            case EnemyType.Dark:
                 switch (dmgType) {
-                    case HitBoxType.Heavy:
-                        return dmg * 1.5f;
-                    case HitBoxType.Magic:
-                        return dmg;
-                    default:
+                    case HitBoxType.Light:
                         return dmg / 4;
+                    case HitBoxType.Dark:
+                        return dmg* 1.5f;
+                    default:
+                        return dmg;
                 }
+            
         }
         return dmg;
     }
@@ -592,8 +586,8 @@ private float DmgMod(float dmg, HitBoxType dmgType) {
     //    }
     //}
     public void SlimeHasDied() {
-        int exp = stats.BaseHealth * stats.ExpYield;
-        pc.stats.AddExp(exp);
+        //int exp = stats.BaseHealth * stats.ExpYield;
+        //pc.stats.AddExp(exp);
         if (drop != null) {
             Instantiate(drop, transform.position + new Vector3(0, 0.14f, 0), Quaternion.identity);
             drop.transform.position = transform.position;

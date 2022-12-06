@@ -4,5 +4,5 @@ using UnityEngine;
 
 public enum HitBoxType
 {
-   Normal ,Heavy, Magic 
+   Light,Dark 
 }

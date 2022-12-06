@@ -53,10 +53,10 @@ public class Player : MonoBehaviour
         print(LockedOn);
         if (val) {
             LockedOn = true;
-            /*if (playerIsLockedOn != null) {
+            if (playerIsLockedOn != null) {
                 playerIsLockedOn();
             }
-            findClosestEnemy.Invoke();*/
+            findClosestEnemy.Invoke();
         }
         else {
             //notAiming.Invoke();
